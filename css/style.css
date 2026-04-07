@@ -2,18 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: serif;
-    
+    font-family: 'Averia Serif Libre', serif;
 }
 
 body {
     background: #ff5b00;
+    color: black;
     overflow-x: hidden;
 }
 
+/* EFECTO SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
 
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-/* HEADER */
+/* HEADER (Tu código corregido) */
 .header {
     position: fixed;
     width: 100%;
@@ -25,11 +35,7 @@ body {
     z-index: 1000;
 }
 
-/* HAMBURGUESA */
-.hamburger {
-    cursor: pointer;
-}
-
+.hamburger { cursor: pointer; }
 .hamburger span {
     display: block;
     width: 25px;
@@ -38,34 +44,49 @@ body {
     margin: 5px 0;
 }
 
-/* NAV */
-.nav {
+.logo { font-weight: bold; font-family: 'Krona One', sans-serif; text-decoration: none; color: black; }
+
+/* SECCIONES */
+.section {
+    min-height: 100vh;
     display: flex;
-    gap: 40px;
-    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.nav a {
-    display: block;
-    margin-bottom: 25px;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
+.main-title {
+    font-family: 'Krona One', sans-serif;
+    font-size: clamp(3rem, 12vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 20px;
 }
 
-.logo {
-    font-weight: bold;
+.text-content {
+    max-width: 700px;
+    font-size: 1.5rem;
+    line-height: 1.6;
 }
 
-/* RIGHT */
-.right {
-    justify-self: end;
-    display: flex;
-    gap: 20px;
+.grid-elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
 }
 
+.card {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
 
-/* SIDE MENU */
+.card i { font-size: 2rem; margin-bottom: 20px; }
+
+/* MENÚ LATERAL (Corrección Z-INDEX) */
 .side-menu {
     position: fixed;
     top: 10px;
@@ -74,54 +95,33 @@ body {
     height: calc(100% - 20px);
     padding: 80px 30px;
     border-radius: 20px;
-    
-    background: rgba(255,255,255,0.15);
+    background: rgba(0, 0, 0, 0.85); /* Oscurecido para contraste */
     backdrop-filter: blur(12px);
-
     transition: 0.4s;
-    z-index: 1100;
+    z-index: 2000; /* Por encima de todo */
 }
 
-/* ACTIVO */
-.side-menu.active {
-    left: 10px;
-}
+.side-menu.active { left: 10px; }
+.side-menu a { display: block; margin-bottom: 25px; font-size: 22px; color: white; text-decoration: none; }
 
-/* LINKS */
-.side-menu a {
-    display: block;
-    margin-bottom: 25px;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-}
-
-/* OVERLAY */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.5);
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
-    z-index: 998;
+    z-index: 1500;
 }
+.overlay.active { opacity: 1; pointer-events: auto; }
 
-.overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* BOTÓN CERRAR */
 .close {
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 30px;
+    font-size: 40px;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    z-index: 1000;
 }
-

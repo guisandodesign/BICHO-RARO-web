@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>BICHO RARO</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>BICHO RARO | Pieza de Danza</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css">
-
-        <!-- Icons -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Hubballi&family=Krona+One&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-
-    </head>
-   
-    <body>
-
-
-        <header class="header">
+<header class="header">
     <div class="hamburger" id="openMenu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
-
     <nav class="nav">
         <a href="#" class="logo">AP</a>
     </nav>
-
     <div class="right">
         <span>Buscar</span>
         <span>Carrito</span>
     </div>
 </header>
 
-<!-- OVERLAY -->
 <div class="overlay" id="overlay"></div>
 
-<!-- MENÚ LATERAL -->
 <div class="side-menu" id="sideMenu">
     <button class="close" id="closeMenu">&times;</button>
-
-    <a href="#">Inicio</a>
-    <a href="#">Donaciones</a>
-    <a href="#">Sobre Bicho Raro</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#manifiesto">Manifiesto</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#donaciones">Donaciones</a>
 </div>
 
+<main>
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero section">
+        <div class="reveal">
+            <h1 class="main-title">BICHO RARO</h1>
+            <p class="subtitle">Danza contemporánea sobre la abyección y la rotura del género.</p>
+        </div>
+    </section>
 
+    <!-- MANIFIESTO -->
+    <section id="manifiesto" class="section">
+        <div class="reveal container">
+            <h2 class="section-title">El Manifiesto</h2>
+            <p class="text-content">Un cuerpo que se rompe para encontrarse. Esta pieza nace de la vivencia trans, del rechazo que se convierte en armadura y de la belleza que florece en lo que la sociedad llama "raro".</p>
+        </div>
+    </section>
 
-        <script src="js/script.js"></script>
-    </body>
-   
-   
-   
-    </html>
+    <!-- ELEMENTOS (Máscara y Vestuario) -->
+    <section id="elementos" class="section">
+        <div class="grid-elements">
+            <div class="reveal card">
+                <i class="fa-solid fa-mask"></i>
+                <h3>La Máscara</h3>
+                <p>Cráneo y objeto principal. La deshumanización para alcanzar la verdadera identidad.</p>
+            </div>
+            <div class="reveal card">
+                <i class="fa-solid fa-shirt"></i>
+                <h3>Vestuario</h3>
+                <p>Texturas que narran la transición y la abyección del cuerpo normativo.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>

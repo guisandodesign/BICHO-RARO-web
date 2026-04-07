@@ -4,35 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const menu = document.getElementById("sideMenu");
     const overlay = document.getElementById("overlay");
 
-    // Lógica del Menú
-    const toggleMenu = () => {
-        menu.classList.toggle("active");
-        overlay.classList.toggle("active");
+    // Función unificada para CERRAR
+    const closeMenu = () => {
+        menu.classList.remove("active");
+        overlay.classList.remove("active");
     };
 
-    openBtn.addEventListener("click", toggleMenu);
-    closeBtn.addEventListener("click", toggleMenu);
-    overlay.addEventListener("click", toggleMenu);
+    // Función unificada para ABRIR
+    const openMenu = (e) => {
+        e.preventDefault();
+        menu.classList.add("active");
+        overlay.classList.add("active");
+    };
 
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll(".side-menu a").forEach(link => {
-        link.addEventListener("click", toggleMenu);
+    // Asignación de eventos
+    if (openBtn) openBtn.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    if (overlay) overlay.addEventListener("click", closeMenu); // CLIC FUERA
+
+    // Cerrar también si se pulsa un enlace del menú
+    const menuLinks = document.querySelectorAll(".side-menu a");
+    menuLinks.forEach(link => {
+        link.addEventListener("click", closeMenu);
     });
 
-    // Lógica de Aparición al hacer Scroll (Intersection Observer)
-    const observerOptions = {
-        threshold: 0.15
-    };
-
+    // 2. Lógica de Scroll Reveal (Se mantiene igual, está OK)
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll(".reveal").forEach(el => {
-        observer.observe(el);
-    });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 });

@@ -5,10 +5,9 @@
     <title>BICHO RARO | Pieza de Danza</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300;400;700&family=Krona+One&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,11 +16,12 @@
         <span></span><span></span><span></span>
     </div>
     <nav class="nav">
-        <a href="#" class="logo">AP</a>
+        <a href="#" class="logo">
+            <img src="img/tu-logo.png" alt="BICHO RARO" style="height: 40px;">
+        </a>
     </nav>
     <div class="right">
-        <span>Buscar</span>
-        <span>Carrito</span>
+        <img src="img/tu-icono-derecho.png" alt="Icono" style="height: 25px;">
     </div>
 </header>
 
@@ -36,37 +36,45 @@
 </div>
 
 <main>
-    <!-- SECCIÓN HERO -->
-    <section id="inicio" class="hero section">
-        <div class="reveal">
-            <h1 class="main-title">BICHO RARO</h1>
-            <p class="subtitle">Danza contemporánea sobre la abyección y la rotura del género.</p>
-        </div>
-    </section>
+<section id="inicio" class="hero-image-container">
+    <!-- Añadimos la clase reveal aquí -->
+    <div class="reveal reveal-hero">
+        <img src="img/foto home.png" alt="Bicho Raro" class="hero-img">
+    </div>
+</section>
 
-    <!-- MANIFIESTO -->
-    <section id="manifiesto" class="section">
-        <div class="reveal container">
-            <h2 class="section-title">El Manifiesto</h2>
-            <p class="text-content">Un cuerpo que se rompe para encontrarse. Esta pieza nace de la vivencia trans, del rechazo que se convierte en armadura y de la belleza que florece en lo que la sociedad llama "raro".</p>
-        </div>
-    </section>
 
-    <!-- ELEMENTOS (Máscara y Vestuario) -->
-    <section id="elementos" class="section">
-        <div class="grid-elements">
-            <div class="reveal card">
-                <i class="fa-solid fa-mask"></i>
-                <h3>La Máscara</h3>
-                <p>Cráneo y objeto principal. La deshumanización para alcanzar la verdadera identidad.</p>
+    <div class="content-wrapper">
+        <!-- IMPORTANTE: Cambia 'tu-mancha.svg' por el nombre real de tu archivo de mancha -->
+        <div class="hero-divider"></div>
+        
+        <section class="hero-content-area">
+            <div class="reveal">
+                <h1 class="main-title">BICHO RARO</h1>
+                <p class="subtitle">Danza contemporánea sobre la abyección y la rotura del género.</p>
             </div>
-            <div class="reveal card">
-                <i class="fa-solid fa-shirt"></i>
-                <h3>Vestuario</h3>
-                <p>Texturas que narran la transición y la abyección del cuerpo normativo.</p>
+        </section>
+
+        <section id="manifiesto" class="section">
+            <div class="reveal">
+                <h2 class="section-title">El Manifiesto</h2>
+                <p class="text-content">Un cuerpo que se rompe para encontrarse. Esta pieza nace de la vivencia trans, del rechazo que se convierte en armadura.</p>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="elementos" class="section">
+            <div class="grid-elements">
+                <div class="reveal card">
+                    <h3>La Máscara</h3>
+                    <p>Cráneo y objeto principal. La deshumanización para alcanzar la verdadera identidad.</p>
+                </div>
+                <div class="reveal card">
+                    <h3>Vestuario</h3>
+                    <p>Texturas que narran la transición y la abyección del cuerpo normativo.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 
 <script src="js/script.js"></script>
